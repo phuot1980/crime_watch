@@ -1,1 +1,12 @@
-edit.html.erb
+<h1>Edit this User</h1>
+
+<%= form_for @user do |f| %>
+	First Name: <%= f.text_field :first_name %>
+	Last Name: <%= f.text_field :last_name %>
+	Add A Picture: <%= f.file_field :image %>
+
+	<%= f.submit "Submit these changes!" %>
+
+<% end %></br>
+
+<%= link_to "Back to the Users!", users_path %>
