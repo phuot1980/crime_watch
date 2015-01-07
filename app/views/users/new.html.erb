@@ -1,0 +1,16 @@
+<h1>Create A New user</h1>
+
+<%= form_for @user do |f| %>
+
+	Name: <%= f.text_field :name %>
+	Email: <%= f.text_field :email %>
+	Address: <%= f.text_field :address %>
+	City: <%= f.text_field :city %>
+	Zip: <%= f.number_field :name %>
+
+	<%= f.submit "Add New User" %>
+
+<% end %>
+
+<br>
+<%= link_to "Back to Users", users_path %>
