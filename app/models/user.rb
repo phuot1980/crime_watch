@@ -5,4 +5,6 @@ class User
   field :address, type: String
   field :city, type: String
   field :zip, type: Integer
+
+  
 end
