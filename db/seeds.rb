@@ -18,7 +18,7 @@ users = User.create([
 
 puts "seeding reports DB"
 users = User.create([
-	{ name: 'Laurie', location: "crenshaw and slauson"}
+	{ name: 'Laurie', location: "crenshaw and slauson", body: ''}
 	])
 	
 
