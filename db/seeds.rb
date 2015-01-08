@@ -7,12 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts "seeding DB"
 User.destroy_all
+Report.destroy_all
 
-puts "Seeding Users"
+puts "seeding Users DB"
 users = User.create([
 	{ name: 'Ponlok', email: 'Huot', address: '1234 something ave', city: 'rosemead', zip: '92881' }, 
 	{ name: 'Yess', email: 'Limon', address: '1914 park st', city: 'whittier', zip: '90605' }, 
 
 	]) 
+
+puts "seeding reports DB"
+users = User.create([
+	{ name: 'Laurie', location: "crenshaw and slauson"}
+	])
+	
 
 puts "seeding completed"
