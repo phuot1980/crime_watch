@@ -1,0 +1,14 @@
+<h1>New Report Page</h1>
+
+<%= form_for @report do |f| %>
+
+	Name: <%= f.text_field :name %>
+	Cross Streets: <%= f.text_field :location %>
+	What did you see?: <%= f.text_area :body %>
+
+	<%= f.submit "Add a report" %>
+
+<% end %>
+
+<br>
+<%= link_to "report index", reports_path %>

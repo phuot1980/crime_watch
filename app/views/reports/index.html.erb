@@ -1,0 +1,12 @@
+<h1>My Reports index page</h1>
+
+
+<%= @reports.each do |report| %> 
+	<%= "#{report.name}" %><br>
+	<%= "#{report.location}" %><br>
+	<%= "#{report.body}" %>
+
+<% end %>
+
+
+
