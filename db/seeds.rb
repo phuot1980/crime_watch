@@ -17,7 +17,7 @@ users = User.create([
 	]) 
 
 puts "seeding reports DB"
-users = User.create([
+reports = Report.create([
 	{ name: 'Laurie', location: "crenshaw and slauson", body: ''}
 	])
 	
