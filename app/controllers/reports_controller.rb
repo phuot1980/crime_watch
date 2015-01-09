@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
 	def show
 		@report = Report.find(params[:id])
-		@comment = Comment.new
+		# @comment = Comment.new
 	end
 
 	def new
@@ -24,6 +24,6 @@ class ReportsController < ApplicationController
 	private
 
 	def report_params
-		params.require(:report).permit(:name, :location, :body)
+		params.require(:report).permit(:name, :location, :body, :user)
 	end
 end

@@ -6,9 +6,15 @@
 	Cross Streets: <%= f.text_field :location %>
 	What did you see?: <%= f.text_area :body %>
 
+	<!-- this setups the users and reports relationship -->
+	<%= f.label :user %> 
+	<%= f.collection_select :user, User.all, :id, :name %>
+
 	<%= f.submit "Add a report" %>
 
 <% end %>
 
 <br>
-<%= link_to "report index", reports_path %>
+<%= link_to "report index", reports_path %><br>
+
+<%= link_to "back to user index", users_path %>
