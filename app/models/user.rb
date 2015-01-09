@@ -6,5 +6,5 @@ class User
   field :city, type: String
   field :zip, type: Integer
 
-  
+  has_many :reports
 end
