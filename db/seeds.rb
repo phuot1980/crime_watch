@@ -9,12 +9,14 @@ puts "seeding DB"
 User.destroy_all
 Report.destroy_all
 
-puts "seeding Users DB"
-users = User.create([
-	{ name: 'Ponlok', email: 'Huot', address: '1234 something ave', city: 'rosemead', zip: '92881' }, 
-	{ name: 'Yess', email: 'Limon', address: '1914 park st', city: 'whittier', zip: '90605' }, 
 
-	]) 
+puts "seeding Users DB"
+u1 = User.new(name: 'Ponlok', email: 'Huot', address: '1234 something ave', city: 'rosemead', zip: '92881').save(validate: false)
+u2 = User.new(name: 'Yess', email: 'Limon', address: '1914 park st', city: 'whittier', zip: '90605').save(validate: false)
+
+puts 'seeding reports db'
+r1 = Report.new(name: 'robbery', user: u1 ).save(validate: false)
+
 
 
 
