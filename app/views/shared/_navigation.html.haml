@@ -1,11 +1,16 @@
 %nav.navbar.navbar-default.navbar-fixed-top
 	.container
 		%ul
+			%li 
+				= link_to 'Home', root_path
 			%li
-				Home
+				= link_to 'Reports', reports_path
 			%li
-				Reports
+				/ if the user id key exist it means the user is logged in. 
+				- if session[:user_id]
+					= link_to 'Log Out', logout_path, method: :delete
+				- else 
+					= link_to 'Login', login_path
 			%li
-				Login
-			%li
-				Sign up
+				= link_to 'Sign Up', new_user_path
+
