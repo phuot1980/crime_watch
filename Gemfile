@@ -8,6 +8,7 @@ group :development do
   gem "pry-rails"
 end 
 
+gem 'haml'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
