@@ -1,6 +1,6 @@
-%nav.navbar.navbar-default.navbar-fixed-top
+%nav
 	.container
-		%ul
+		%ul.nav.nav-tabs
 			%li 
 				= link_to 'Home', root_path
 			%li
@@ -11,6 +11,12 @@
 					= link_to 'Log Out', logout_path, method: :delete
 				- else 
 					= link_to 'Login', login_path
-			%li
-				= link_to 'Sign Up', new_user_path
+			- if not session[:user_id]
+				%li
+					= link_to 'Sign Up', new_user_path
 
+/ <ul class="nav nav-tabs">
+/   <li role="presentation" class="active"><a href="#">Home</a></li>
+/   <li role="presentation"><a href="#">Profile</a></li>
+/   <li role="presentation"><a href="#">Messages</a></li>
+/ </ul>'
