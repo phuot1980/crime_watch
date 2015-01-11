@@ -1,28 +1,5 @@
-/ <h1>My Reports index page</h1>
-
-/ <ul>
-/ 	<% @reports.each do |report| %> 
-/ 	<li>
-/ 		<%= report.name %><br>
-/ 		<%= report.location %><br>
-/ 		<%= report.body %>
-/ 		<%= link_to "Show Report", report %>
-/ 	</li>
-/ <% end %>
-/ </ul>
 
 
+%h1 My Reports Index Page
 
 
-/ <%= link_to "back to user index", users_path, {class: 'btn btn-primary'} %>
-
-%h1 
-	Suspicous Acitivities Reported
-%ul
-	- @reports.each do |report|
-		%li
-			%strong
-				= link_to report.name.capitalize, report
-			%br
-			Reported by: 
-			= link_to report.user.name.capitalize, user_path(report.user)
