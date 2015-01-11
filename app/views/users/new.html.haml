@@ -1,0 +1,10 @@
+.container-fluid
+  .row
+    .col-sm-4.col-sm-offsee-t
+      .text-center
+      Sign up for an account
+      %ul.list-group
+        - @user.errors.full_messages.each do |msg|
+          %li.list-group-item.list-group-item-danger
+          = msg
+        = render 'form'
