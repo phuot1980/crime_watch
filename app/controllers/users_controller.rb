@@ -1,15 +1,14 @@
 class UsersController < ApplicationController
+	before_action :set_user, only: [:show, :destroy, :edit, :update]
+
 	def index
 		@users = User.all
   end
 
   def show
-  	#puts params['id']
-  	@user = User.find(params[:id])
   end
 
   def destroy
-  	@user = User.find(params[:id])
   	@user.destroy 
   	redirect_to users_url
   end
@@ -30,15 +29,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-		#this action is responsible for retrieving a specific User from db
-		@user = User.find(params[:id])
 		@submit_message = 'Edit Account'
 	end
 
 
 	def update
-		#this line of code retrieves a spefic user from the DB
-		@user = User.find(params[:id])
 		if @user.update_attributes!(user_params)
 			redirect_to @user
 		else
@@ -48,6 +43,10 @@ class UsersController < ApplicationController
 
   #only accessible from the controller
 	private
+
+	def set_user
+		@user = User.find(params[:id])
+	end
 
 	def user_params
 		params.require(:user).permit(:name, :email, :address, :city, :zip, :password, :password_confirmation)
