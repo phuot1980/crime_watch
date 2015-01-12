@@ -1,8 +1,8 @@
-%h1 Report Show page
+%h1 
+	= @report.name.titleize
 .row
 	.col-md-4
-		= @report.name
-		%br
-		= @report.location
+		- if @report.address
+			= simple_format @report.full_address
 		%br
 		= @report.body

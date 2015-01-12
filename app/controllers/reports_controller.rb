@@ -25,6 +25,6 @@ class ReportsController < ApplicationController
 	private
 
 	def report_params
-		params.require(:report).permit(:name, :location, :body, :user)
+		params.require(:report).permit(:name, :address, :city, :state, :zip , :body, :user)
 	end
 end

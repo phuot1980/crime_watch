@@ -3,11 +3,11 @@
 	.col-sm-3
 		%ul
 			- @reports.each do |report|
-				%li
-					= report.name 
-					%br
-					%strong Cross Streets: 
-					= report.location
-					%br
-					%strong More Info:
-					= link_to 'show report', report
+				%li 
+					= link_to report.name.titleize, report
+					%br 
+					- if report.address
+						%strong Location:
+						%br
+						= simple_format report.full_address
+					
