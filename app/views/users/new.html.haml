@@ -1,8 +1,7 @@
 .container-fluid
   .row
-    .col-sm-4.col-sm-offsee-t
-      .text-center
-      Sign up for an account
+    .col-sm-6.col-sm-offsee-t
+      %h1.text-center Sign up for an account
       %ul.list-group
         - @user.errors.full_messages.each do |msg|
           %li.list-group-item.list-group-item-danger

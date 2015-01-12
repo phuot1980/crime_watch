@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user = User.new	
+  	@user = User.new
+  	@submit_message = 'Sign Up'	
   end
 
   def create
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
   def edit
 		#this action is responsible for retrieving a specific User from db
 		@user = User.find(params[:id])
+		@submit_message = 'Edit Account'
 	end
 
 
