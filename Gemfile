@@ -9,7 +9,9 @@ group :development do
   gem "spirit_fingers"
 end 
 
+gem 'rails_12factor', group: :production
 gem 'haml'
+
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
