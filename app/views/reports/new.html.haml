@@ -1,4 +1,7 @@
 %h1 Create A Report
 .row
 	.col-sm-4
+		- @report.errors.full_messages.each do |msg|
+			%li.list-group-item.list-group-item-danger
+			= msg
 		= render 'form'
