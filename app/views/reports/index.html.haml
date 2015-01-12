@@ -1,13 +1,17 @@
 %h1 All Reports
-.row
-	.col-sm-3
-		%ul
-			- @reports.each do |report|
-				%li 
+- @reports.each do |report|
+	.row
+		.col-md-4
+			%div
+				%ul
+				.inline.unstyled
+					%li 
 					= link_to report.name.titleize, report
 					%br 
-					- if report.address
-						%strong Location:
-						%br
-						= simple_format report.full_address
+						- if report.address
+							%strong Location:
+							%br
+							= simple_format report.full_address
+					
+
 					
