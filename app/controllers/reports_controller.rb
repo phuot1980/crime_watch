@@ -14,6 +14,7 @@ class ReportsController < ApplicationController
 
 	def create
 		@report = Report.create(report_params)
+		@report.user = current_user
 		if @report.save
 			redirect_to reports_path
 		else

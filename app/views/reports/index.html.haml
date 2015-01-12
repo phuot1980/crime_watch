@@ -1,5 +1,13 @@
-
-
-%h1 My Reports Index Page
-
-
+%h1 All Reports
+.row
+	.col-sm-3
+		%ul
+			- @reports.each do |report|
+				%li
+					= report.name 
+					%br
+					%strong Cross Streets: 
+					= report.location
+					%br
+					%strong More Info:
+					= link_to 'show report', report
