@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 #########################################
 #   gems that i install 
+ruby '2.1.3'
 
 group :development do
   gem "better_errors"
