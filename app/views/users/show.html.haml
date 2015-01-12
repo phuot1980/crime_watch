@@ -1,0 +1,16 @@
+%h1 Account info
+.row
+	.col-md-3
+		= @user.name
+		%br
+		= @user.email
+		%br
+		= @user.address
+		%br
+		= @user.city
+		%br
+		= @user.zip
+		%br
+		= link_to 'Edit your account', edit_user_path(@user)
+	.col-md-6
+		= link_to 'report a suspicious activity', new_report_path
