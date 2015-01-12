@@ -9,21 +9,7 @@ class User
   field :password_digest, type: String
   attr_reader :password
 
-  #setter method
-  def password=(unencrypted_password)
-    unless unencrypted_password.empty?
-      @password = unencrypted_password
-      self.password_digest = BCrypt::Password.create(unencrypted_password)
-    end
-  end
-  
-  def authenticate(unencrypted_password)
-    if BCrypt::Password.new(self.password_digest) == unencrypted_password
-      return self
-    else
-      return false
-    end
-  end
+  has_many :reports
 
   #here another way to validate presence of multiple things one line:
   # validates_presence_of :name, :email, :password
@@ -33,9 +19,26 @@ class User
   #makes sure that email exist and is unique and declares the format
   validates :email, presence: true, uniqueness: { case_sensitive: false },
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :password, presence: true, length: { :within => 6..40 }, confirmation: true,
+    :allow_blank => false, :on => :create
+  validates :password, presence: true, length: { :within => 6..40 }, confirmation: true,
+    :allow_blank => true, :on => :update
 
-  #
-  validates :password, presence: true, length: { in: 6..20 }, confirmation: true
+  #setter method
+  def password=(unencrypted_password)
+    unless unencrypted_password.empty?
+      @password = unencrypted_password
+      encrypted_password = BCrypt::Password.create(unencrypted_password)
+      self.password_digest = encrypted_password
+    end
+  end
 
-  has_many :reports
+  def authenticate(unencrypted_password)
+    if BCrypt::Password.new(self.password_digest) == unencrypted_password
+      return self
+    else
+      return false
+    end
+  end
+
 end

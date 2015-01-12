@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
 		if @user.save
-			redirect_to users_path
+			redirect_to @user
 		else
 			#redisplay the form that is created. 
 			render 'new'
@@ -35,10 +35,10 @@ class UsersController < ApplicationController
 
 
 	def update
-		#this line of code retrieves a spefic bean from the DB
+		#this line of code retrieves a spefic user from the DB
 		@user = User.find(params[:id])
-		if @user.update_attributes(user_params)
-			redirect_to users_path
+		if @user.update_attributes!(user_params)
+			redirect_to @user
 		else
 			render 'edit'
 		end
