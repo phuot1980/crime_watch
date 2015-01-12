@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class='container-fluid'>
-<%= yield %>
-</div>
-</body>
+<%= render 'shared/navigation' %>
+	<div class='container-fluid' id="appmain">
+		<div class='container'>
+		<%= yield %>
+		</div>
+	</div>
+	</body>
 </html>
