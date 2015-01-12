@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 
 group :development do
   gem "better_errors"
-  gem "pry-rails"
+  gem "spirit_fingers"
 end 
 
 gem 'haml'
