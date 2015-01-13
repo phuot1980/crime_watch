@@ -8,7 +8,7 @@ class User
   field :password_digest, type: String
   attr_reader :password
 
-  mount_uploader :image, AvatarUploader
+  # mount_uploader :image, AvatarUploader
   has_many :reports
 
   #here another way to validate presence of multiple things one line:
