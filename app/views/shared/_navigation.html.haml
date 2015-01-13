@@ -1,20 +1,29 @@
-%nav
-	.container
-		%ul.nav.nav-tabs.navbar-inverse
-			%li 
-				= link_to 'Home', root_path
-			%li
-				= link_to 'Reports', reports_path
-			%li
-				- if session[:user_id] 
-					= link_to "#{current_user.name}", user_path(session[:user_id])
-			%li
-				/ if the user id key exist it means the user is logged in. 
-				- if session[:user_id]
-					= link_to 'Log Out', logout_path, method: :delete
-				- else 
-					= link_to 'Login', login_path
-			- if not session[:user_id]
+.row
+	%nav.col-md-6 
+		.container
+			%ul.nav.nav-tabs
+				%li 
+					= link_to 'Home', root_path
 				%li
-					= link_to 'Sign Up', new_user_path
+					= link_to 'Reports', reports_path
+				%li
+					- if session[:user_id] 
+						= link_to "#{current_user.name}", user_path(session[:user_id])
+				%li
+					/ if the user id key exist it means the user is logged in. 
+					- if session[:user_id]
+						= link_to 'Log Out', logout_path, method: :delete
+				- unless session[:user_id]
+					%li
+						= link_to 'Sign Up', new_user_path
+	- unless current_user
+		#nav.navbar-collapse.collapse.col-md-6
+			= form_for :login, url: {controller: :sessions, action: :create}, html: {class: 'navbar-form navbar-right'} do |f|
+				.form-group 
+					= f.text_field :email, placeholder: :email, class: "form-control"
+					=	f.password_field :password, placeholder: :password, class: "form-control"
+				= f.submit "Login", :class => "btn btn-primary"
 
+
+
+	
