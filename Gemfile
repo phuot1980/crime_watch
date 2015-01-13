@@ -9,6 +9,9 @@ group :development do
   gem "spirit_fingers"
 end 
 
+# Use Thin server
+gem 'thin', group: :production
+
 gem 'rails_12factor', group: :production
 gem 'haml'
 
@@ -31,6 +34,7 @@ gem 'figaro'
 
 gem 'fog'           #for Amazon S3
 gem 'mini_magick'   #for post-upload processing
+
 
 ############################################
 
