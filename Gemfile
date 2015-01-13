@@ -7,6 +7,7 @@ ruby '2.1.3'
 group :development do
   gem "better_errors"
   gem "spirit_fingers"
+  gem "guard-livereload"
 end 
 
 # Use Thin server
