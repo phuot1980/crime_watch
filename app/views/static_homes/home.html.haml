@@ -1,4 +1,8 @@
-%h1.jumbotron.text-center Welcome, to your Neighborhood watch
+%h1.jumbotron.text-center 
+	- if current_user
+		= "Welome, #{current_user.name}, to your Neighborhood Watch!"
+	- else
+		Welcome to your Neighborhood Watch
 .row
 	.col-md-6
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -8,12 +12,12 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	.col-md-6.off-set-6
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+		%h2.inline.text-center Latest Reports
+		- @reports.each do |report|
+			%ul
+				%li
+				%strong
+					= report.name.titleize
+				%br
+				= truncate(report.body, length: 200, separator: ' ') { link_to "more info", report }
 
-
-			
