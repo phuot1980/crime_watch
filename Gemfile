@@ -26,6 +26,12 @@ gem 'autoprefixer-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.9'
 
+# hides your kesy
+gem 'figaro'
+
+gem 'fog'           #for Amazon S3
+gem 'mini_magick'   #for post-upload processing
+
 ############################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

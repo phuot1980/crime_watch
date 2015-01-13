@@ -4,11 +4,11 @@ class User
   field :address, type: String
   field :city, type: String
   field :zip, type: Integer
-
   field :email, type: String
   field :password_digest, type: String
   attr_reader :password
 
+  mount_uploader :image, AvatarUploader
   has_many :reports
 
   #here another way to validate presence of multiple things one line:
