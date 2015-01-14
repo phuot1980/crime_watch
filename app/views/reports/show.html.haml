@@ -1,9 +1,17 @@
-%h1 
-	= @report.name.titleize
+.jumbotron
+	.container
+		.row
+			%h1
+				= @report.name.titleize
+		.row
+			%p
+				%small
+					= " Reported by: #{@report.user.name}"
 .row
 	.col-md-6
 		- if @report.address
 			= simple_format @report.full_address
+		%address
 		.blockquote
 			%p.lead
 				= @report.body
