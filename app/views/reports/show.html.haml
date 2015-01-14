@@ -4,6 +4,6 @@
 	.col-md-6
 		- if @report.address
 			= simple_format @report.full_address
-		%br
 		.blockquote
-		= @report.body
+			%p.lead
+				= @report.body
