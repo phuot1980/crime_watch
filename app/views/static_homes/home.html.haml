@@ -5,18 +5,23 @@
 		Welcome to your Neighborhood Watch
 .row
 	.col-md-6
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	.col-md-6.off-set-6
-		%h2.inline.text-center Latest Reports
-		- @reports.each do |report|
-			.list-group
-				%a.list-group-item{href: report_path(report) }
-					%h4.list-group-item-heading
-						= report.name.titleize
-					%p.list-group-item-text
-						= truncate(report.body, length: 200, separator: ' ') 
+		%p.lead
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	.col-md-6
+		.panel.panel-danger
+			.panel-heading
+				%h2.inline.text-center Latest Reports
+			.panel-body
+				- @reports.each do |report|
+					.list-group
+						%a.list-group-item{href: report_path(report) }
+							%h4.list-group-item-heading
+								%p.lead
+									= report.name.titleize
+							%p.list-group-item-text
+								= truncate(report.body, length: 200, separator: ' ') 
